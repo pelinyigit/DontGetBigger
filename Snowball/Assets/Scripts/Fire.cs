@@ -8,7 +8,7 @@ public class Fire : ObstacleBase
     {
         if (other.GetComponent<PlayerController>())
         {
-            EventManager.OnCharacterScaleDown.Invoke();
+            EventManager.OnCharacterToScaleDown.Invoke();
             base.Dispose();
         }
     }

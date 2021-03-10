@@ -10,7 +10,10 @@ public class PlayerController : MonoBehaviour
     [Space]
     [SerializeField] float playerSpeed = 10f;
 
-    Rigidbody rb; 
+    Vector3 playerSpeedVector;
+
+    Rigidbody rb;
+    CharacterController characterController;
 
     void Start()
     {
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void HandlePlayerMovement()
     {
+        
         rb.velocity = new Vector3(dynamicJoystick.Horizontal * playerSpeed * 0.5f, 0, playerSpeed);
     }
   

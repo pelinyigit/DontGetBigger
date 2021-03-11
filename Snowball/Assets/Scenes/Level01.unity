@@ -628,7 +628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1341317351, guid: 6d4fa4e7fc61df048a0af03dfcf0a151, type: 3}
       propertyPath: playerSpeed
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1341317351, guid: 6d4fa4e7fc61df048a0af03dfcf0a151, type: 3}
       propertyPath: dynamicJoystick

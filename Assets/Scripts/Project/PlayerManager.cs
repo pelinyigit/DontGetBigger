@@ -39,6 +39,10 @@ public class PlayerManager : MonoBehaviour
             transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * scaleFactor, scaleGraceTime);
             Debug.Log("State:" + snowBallState);
         }
+        else if (snowBallState == SnowBallState.Large)
+        {
+            EventManager.OnLevelFail?.Invoke();
+        }
     }
     private void ScaleDown()
     {

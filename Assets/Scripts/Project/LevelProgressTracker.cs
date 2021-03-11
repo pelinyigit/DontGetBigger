@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class LevelProgressTracker : MonoBehaviour
 {
     public float playerProgress;
     
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             isFinished = true;
             EventManager.OnLevelFinish?.Invoke();
             Debug.Log("Level Completed");
-            Time.timeScale = 0.2f;
+            
         }
     }
 }

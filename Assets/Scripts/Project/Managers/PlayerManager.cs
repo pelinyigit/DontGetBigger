@@ -11,15 +11,14 @@ public class PlayerManager : MonoBehaviour
     [Space]
     [SerializeField]
     float scaleGraceTime = 1f;
-
     
     public enum SnowBallState {Small, Mid, Large};
     public SnowBallState snowBallState;
 
     private void OnEnable()
     {
-        EventManager.OnCharacterToScaleUp.AddListener(ScaleUp);
-        EventManager.OnCharacterToScaleDown.AddListener(ScaleDown);
+        EventManager.OnSnowmanCollision.AddListener(ScaleUp);
+        EventManager.OnFireCollision.AddListener(ScaleDown);
     }
     private void Start()
     {        
@@ -27,8 +26,8 @@ public class PlayerManager : MonoBehaviour
     }
     private void OnDisable()
     {
-        EventManager.OnCharacterToScaleUp.RemoveListener(ScaleUp);
-        EventManager.OnCharacterToScaleDown.RemoveListener(ScaleDown);
+        EventManager.OnSnowmanCollision.RemoveListener(ScaleUp);
+        EventManager.OnFireCollision.RemoveListener(ScaleDown);
     }
     private void ScaleUp()
     {
@@ -37,11 +36,13 @@ public class PlayerManager : MonoBehaviour
         {
             snowBallState++;
             transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * scaleFactor, scaleGraceTime);
+            EventManager.OnPlayerScaleUp?.Invoke();
             Debug.Log("State:" + snowBallState);
         }
         else if (snowBallState == SnowBallState.Large)
         {
             EventManager.OnLevelFail?.Invoke();
+            Time.timeScale = 0f;
         }
     }
     private void ScaleDown()
@@ -50,6 +51,7 @@ public class PlayerManager : MonoBehaviour
         {            
             snowBallState--;
             transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale / scaleFactor, scaleGraceTime);
+            EventManager.OnPlayerScaleDown?.Invoke();
             Debug.Log("State:" + snowBallState);
         }
     }

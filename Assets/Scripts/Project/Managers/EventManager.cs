@@ -16,9 +16,16 @@ public static class EventManager
     public static UnityEvent OnLevelFail = new UnityEvent();
     #endregion
 
-
     #region Character
-    public static UnityEvent OnCharacterToScaleUp = new UnityEvent();
-    public static UnityEvent OnCharacterToScaleDown = new UnityEvent();
+    public static UnityEvent OnSnowmanCollision = new UnityEvent();
+    public static UnityEvent OnFireCollision = new UnityEvent();
     #endregion
+
+    #region Player Events
+    public static UnityEvent OnPlayerStartMovement = new UnityEvent();
+    public static UnityEvent OnPlayerScaleUp = new UnityEvent();
+    public static UnityEvent OnPlayerScaleDown = new UnityEvent();
+    #endregion
+
+    
 }

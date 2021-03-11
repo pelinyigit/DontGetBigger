@@ -8,7 +8,7 @@ public class Snowman : ObstacleBase
     {
         if(other.GetComponent<PlayerController>())
         {
-            EventManager.OnCharacterToScaleUp.Invoke();
+            EventManager.OnSnowmanCollision.Invoke();
             base.Dispose();
         }
     }

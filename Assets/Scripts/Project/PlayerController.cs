@@ -27,8 +27,14 @@ public class PlayerController : MonoBehaviour
 
     void HandlePlayerMovement()
     {
-        
-        rb.velocity = new Vector3(dynamicJoystick.Horizontal * playerSpeed * 0.5f, 0, playerSpeed);
-    }
+
+        //rb.velocity = new Vector3(dynamicJoystick.Horizontal * playerSpeed * 0.5f, 0f, playerSpeed);
+        playerSpeedVector = rb.velocity;
+        playerSpeedVector.x = dynamicJoystick.Horizontal * playerSpeed * 0.5f;
+        playerSpeedVector.z = playerSpeed;
+        rb.velocity = playerSpeedVector;
+
+    }   
+
   
 }

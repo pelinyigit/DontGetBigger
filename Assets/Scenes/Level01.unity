@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dynamicJoystick: {fileID: 1449237095}
-  playerSpeed: 15
+  playerSpeed: -15
 --- !u!54 &1835910615
 Rigidbody:
   m_ObjectHideFlags: 0

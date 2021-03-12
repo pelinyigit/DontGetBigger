@@ -7,9 +7,11 @@ public class InGamePanel : Panel
 {
     [SerializeField] Slider levelProgressSlider;
     [SerializeField] Slider scaleSlider;
+    [SerializeField] Text scoreText;
 
     float levelProgressPercentage;
     int scaleValue = 1; // todo daha iyi bir yol bul
+    int totalScore;
 
     private void OnEnable()
     {
@@ -18,7 +20,9 @@ public class InGamePanel : Panel
         EventManager.OnLevelFinish.AddListener(HidePanel);
 
         EventManager.OnPlayerScaleUp.AddListener(ScaleUpTrack);
-        EventManager.OnPlayerScaleDown.AddListener(ScaleDownTrack);        
+        EventManager.OnPlayerScaleDown.AddListener(ScaleDownTrack);
+
+        EventManager.OnCollectibleGathered.AddListener(ScoreTrack);
     }
     private void OnDisable()
     {
@@ -28,6 +32,8 @@ public class InGamePanel : Panel
 
         EventManager.OnPlayerScaleUp.RemoveListener(ScaleUpTrack);
         EventManager.OnPlayerScaleDown.RemoveListener(ScaleDownTrack);
+
+        EventManager.OnCollectibleGathered.RemoveListener(ScoreTrack);
     }
     private void Update()
     {
@@ -45,5 +51,11 @@ public class InGamePanel : Panel
     {
         scaleValue--;
         scaleSlider.value = scaleValue;
+    }
+
+    private void ScoreTrack(int score)
+    {
+        totalScore += score;
+        scoreText.text = totalScore.ToString();
     }
 }

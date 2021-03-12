@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviour
         {
             snowBallState++;
             EventManager.OnPlayerScaleUp?.Invoke();
+            //transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * scaleFactor, scaleGraceTime);
             StartCoroutine(ScaleUpSmooth());
         }
 
@@ -46,8 +47,6 @@ public class PlayerManager : MonoBehaviour
         
     }
 
-
-
     private IEnumerator ScaleUpSmooth()
     {
         float progress = 0;
@@ -58,15 +57,15 @@ public class PlayerManager : MonoBehaviour
             progress += Time.deltaTime * scaleGraceTime;
             yield return null;
         }
-        
-
     }
+
     private void ScaleDown()
     {
         if(snowBallState != SnowBallState.Small)
         {
             snowBallState++;
             EventManager.OnPlayerScaleDown?.Invoke();
+            //transform.localScale = Vector3.Slerp(transform.localScale, transform.localScale / scaleFactor, scaleGraceTime * Time.deltaTime);
             StartCoroutine(ScaleDownSmooth());
         }
 
@@ -74,8 +73,7 @@ public class PlayerManager : MonoBehaviour
         {
             EventManager.OnLevelFail?.Invoke();
             Time.timeScale = 0f;
-        }
-        
+        }        
     }
 
     private IEnumerator ScaleDownSmooth()
@@ -88,8 +86,6 @@ public class PlayerManager : MonoBehaviour
             progress += Time.deltaTime * scaleGraceTime;
             yield return null;
         }
-
-
     }
 
 

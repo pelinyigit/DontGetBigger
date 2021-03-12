@@ -27,5 +27,9 @@ public static class EventManager
     public static UnityEvent OnPlayerScaleDown = new UnityEvent();
     #endregion
 
-    
+    #region CollectibleEvents
+    public static CollectEvent OnCollectibleGathered = new CollectEvent();
+    #endregion
 }
+
+public class CollectEvent : UnityEvent<int> { }

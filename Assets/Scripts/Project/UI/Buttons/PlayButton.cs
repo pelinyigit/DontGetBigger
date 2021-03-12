@@ -19,6 +19,6 @@ public class PlayButton : Button
 
     private void PlayGame()
     {
-        LevelManager.Instance.LoadNextScene();
+        LevelManager.Instance.LoadLastLevel();
     }
 }

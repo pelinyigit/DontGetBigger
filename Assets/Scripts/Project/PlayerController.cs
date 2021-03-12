@@ -22,11 +22,13 @@ public class PlayerController : MonoBehaviour
     {
         EventManager.OnLevelStart.AddListener(StartPlaying);
         EventManager.OnLevelFinish.AddListener(StopPlaying);
+        EventManager.OnLevelFail.AddListener(StopPlaying);
     }
     private void OnDisable()
     {
         EventManager.OnLevelStart.RemoveListener(StartPlaying);
-        EventManager.OnLevelFinish.RemoveListener(StopPlaying);        
+        EventManager.OnLevelFinish.RemoveListener(StopPlaying);
+        EventManager.OnLevelFail.RemoveListener(StopPlaying);
     }
 
     void Start()

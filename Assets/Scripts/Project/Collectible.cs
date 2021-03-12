@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    public int score;
-
-    private void Start()
-    {
-        score = 1;
-    }
+    public int score;   
 
     public void Dispose()
     {

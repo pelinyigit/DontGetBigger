@@ -10,7 +10,7 @@ public static class WaitExtension
         mono.StartCoroutine(ExecuteAction(delay, action));
     }
     #endregion
-
+    
     #region Private IEnumerator Methods
     static IEnumerator ExecuteAction(float delay, UnityAction action)
     {

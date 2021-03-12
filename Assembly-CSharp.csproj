@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Coin.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
@@ -72,7 +73,9 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\Core\Singleton.cs" />
     <Compile Include="Assets\Scripts\Core\WaitExtension.cs" />
+    <Compile Include="Assets\Scripts\GameUI.cs" />
     <Compile Include="Assets\Scripts\Pelin'sUI\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\PlayerRecord.cs" />
     <Compile Include="Assets\Scripts\Project\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Project\Collectible.cs" />
     <Compile Include="Assets\Scripts\Project\Diamond.cs" />

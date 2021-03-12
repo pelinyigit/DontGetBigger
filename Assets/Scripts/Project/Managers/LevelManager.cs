@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : Singleton<LevelManager>
 {
-    int currentSceneIndex;
+    private int currentSceneIndex;
+    public int CurrentSceneIndex { get { return currentSceneIndex; } }
 
     private void Start()
     {
@@ -22,6 +23,11 @@ public class LevelManager : Singleton<LevelManager>
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("Main Menu"); //check name of the scene
+    }
+
+    public void LoadLastLevel()
+    {       
+        SceneManager.LoadScene(PlayerRecord.Instance.GetLastLevel());
     }
 
     public void ResetScene()

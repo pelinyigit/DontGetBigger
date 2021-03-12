@@ -7,6 +7,8 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
     private float playerProgress;
     public float PlayerProgress { get { return playerProgress; } }
 
+    [SerializeField][Range(0f, 1.0f)] private float delayTime = 1f;
+
     private GameObject finishLine;
     private GameObject player;
 
@@ -41,8 +43,13 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
         if ((int)playerProgress == 100 && !isFinished)
         {
             isFinished = true;
-            EventManager.OnLevelFinish?.Invoke();            
-            Time.timeScale = 0f;
+            EventManager.OnLevelFinish?.Invoke();
+           // StartCoroutine(StopTime(delayTime));          
         }
+    }
+    private IEnumerator StopTime(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay);
+        Time.timeScale = 1f;
     }
 }

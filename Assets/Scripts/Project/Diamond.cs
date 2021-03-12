@@ -4,8 +4,5 @@ using UnityEngine;
 
 public class Diamond : Collectible
 {
-    private void Start()
-    {
-        Debug.Log(score);
-    }
+    
 }

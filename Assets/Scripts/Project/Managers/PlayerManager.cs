@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour
         else if (snowBallState == SnowBallState.Large)
         {
             EventManager.OnLevelFail?.Invoke();
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
         }
         
     }
@@ -72,7 +72,7 @@ public class PlayerManager : MonoBehaviour
         else if(snowBallState == SnowBallState.Large)
         {
             EventManager.OnLevelFail?.Invoke();
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
         }        
     }
 

@@ -31,30 +31,66 @@ public class PlayerManager : MonoBehaviour
     }
     private void ScaleUp()
     {
-        // TODO : lose condition will be edited 
         if (snowBallState != SnowBallState.Large)
         {
             snowBallState++;
-            transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * scaleFactor, scaleGraceTime);
             EventManager.OnPlayerScaleUp?.Invoke();
-            Debug.Log("State:" + snowBallState);
+            StartCoroutine(ScaleUpSmooth());
         }
+
         else if (snowBallState == SnowBallState.Large)
         {
             EventManager.OnLevelFail?.Invoke();
             Time.timeScale = 0f;
         }
+        
+    }
+
+
+
+    private IEnumerator ScaleUpSmooth()
+    {
+        float progress = 0;
+        Vector3 maxScale = transform.localScale * scaleFactor;
+        while (progress <= 1)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, maxScale, progress);
+            progress += Time.deltaTime * scaleGraceTime;
+            yield return null;
+        }
+        
+
     }
     private void ScaleDown()
     {
-        if (snowBallState != SnowBallState.Small)
-        {            
-            snowBallState--;
-            transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale / scaleFactor, scaleGraceTime);
+        if(snowBallState != SnowBallState.Small)
+        {
+            snowBallState++;
             EventManager.OnPlayerScaleDown?.Invoke();
-            Debug.Log("State:" + snowBallState);
+            StartCoroutine(ScaleDownSmooth());
         }
+
+        else if(snowBallState == SnowBallState.Large)
+        {
+            EventManager.OnLevelFail?.Invoke();
+            Time.timeScale = 0f;
+        }
+        
     }
-    
+
+    private IEnumerator ScaleDownSmooth()
+    {
+        float progress = 0;
+        Vector3 maxScale = transform.localScale / scaleFactor;
+        while (progress <= 1)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, maxScale, progress);
+            progress += Time.deltaTime * scaleGraceTime;
+            yield return null;
+        }
+
+
+    }
+
 
 }

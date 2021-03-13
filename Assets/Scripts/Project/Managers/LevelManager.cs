@@ -8,11 +8,16 @@ public class LevelManager : Singleton<LevelManager>
     private int currentSceneIndex;
     public int CurrentSceneIndex { get { return currentSceneIndex; } }
 
-    private void Start()
+    private void Awake()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    private void Start()
+    {     
         EventManager.OnLevelStart?.Invoke();
         Time.timeScale = 1f;
+        Debug.Log(currentSceneIndex);
     }
 
     public void LoadNextScene()

@@ -45,15 +45,21 @@ public class PlayerController : MonoBehaviour
     {
         if (isPlaying)
         {
-            //rb.velocity = new Vector3(dynamicJoystick.Horizontal * playerSpeed * 0.5f, 0f, playerSpeed);
-            playerSpeedVector = rb.velocity;
-            playerSpeedVector.x = dynamicJoystick.Horizontal * playerSpeed * 0.5f;
-            playerSpeedVector.z = playerSpeed;
-            rb.velocity = playerSpeedVector;
+            if (rb != null)
+            {
+                //rb.velocity = new Vector3(dynamicJoystick.Horizontal * playerSpeed * 0.5f, 0f, playerSpeed);
+                playerSpeedVector = rb.velocity;
+                playerSpeedVector.x = dynamicJoystick.Horizontal * playerSpeed * 0.5f;
+                playerSpeedVector.z = playerSpeed;
+                rb.velocity = playerSpeedVector;
+            }
         }
         else
         {
-            DOTween.To(() => rb.velocity, x => rb.velocity = x, Vector3.zero, 1.5f);
+            if (rb != null)
+            {
+                DOTween.To(() => rb.velocity, x => rb.velocity = x, Vector3.zero, 1.5f);                            
+            }
         }
     } 
 

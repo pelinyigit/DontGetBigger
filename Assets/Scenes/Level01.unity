@@ -292,6 +292,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 137995087797785763, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 137995087797785766, guid: 7d9d890579e864247b721e07063294e7,
         type: 3}
       propertyPath: m_Camera
@@ -300,17 +305,47 @@ PrefabInstance:
     - target: {fileID: 137995087797785766, guid: 7d9d890579e864247b721e07063294e7,
         type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 137995088213961229, guid: 7d9d890579e864247b721e07063294e7,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 137995088239799018, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137995088239799019, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137995088239799019, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 137995088239799022, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1078214364}
+    - target: {fileID: 137995088239799022, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 137995088239799022, guid: 7d9d890579e864247b721e07063294e7,
         type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 137995088628220951, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_Alpha
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 137995088628220968, guid: 7d9d890579e864247b721e07063294e7,
         type: 3}
@@ -327,6 +362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3226763734691742371, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4704462940809419188, guid: 7d9d890579e864247b721e07063294e7,
         type: 3}
@@ -403,6 +443,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5671108761512285455, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7882564882232359681, guid: 7d9d890579e864247b721e07063294e7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -422,6 +467,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8820507544472569528, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9099170749178511163, guid: 7d9d890579e864247b721e07063294e7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -2.2999992
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d9d890579e864247b721e07063294e7, type: 3}
@@ -1780,7 +1835,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 279
+    m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2773,9 +2828,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1956417770}
-  - component: {fileID: 1956417769}
   - component: {fileID: 1956417771}
   - component: {fileID: 1956417772}
+  - component: {fileID: 1956417769}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged

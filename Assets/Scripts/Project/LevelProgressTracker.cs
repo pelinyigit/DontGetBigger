@@ -17,13 +17,15 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
     private bool isFinished = false;
 
     private void Awake()
-    {
+    {        
         // TODO type'la dene 
         finishLine = GameObject.FindGameObjectWithTag("FinishLine");
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Start()
     {
+       //finishLine = GameObject.FindGameObjectWithTag("FinishLine");
+       //player = GameObject.FindGameObjectWithTag("Player");
        totalDistance = Mathf.Abs(finishLine.transform.position.z - player.transform.position.z);
        currentDistance = Mathf.Abs(finishLine.transform.position.z - player.transform.position.z);       
     }

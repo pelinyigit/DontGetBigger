@@ -9,12 +9,13 @@ public class LevelManager : Singleton<LevelManager>
     public int CurrentSceneIndex { get { return currentSceneIndex; } }
 
     private void Awake()
-    {
+    {        
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Start()
-    {     
+    {
+        //currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         EventManager.OnLevelStart?.Invoke();
         Time.timeScale = 1f;
         Debug.Log(currentSceneIndex);

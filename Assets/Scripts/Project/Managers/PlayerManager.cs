@@ -34,16 +34,14 @@ public class PlayerManager : MonoBehaviour
         if (snowBallState != SnowBallState.Large)
         {
             snowBallState++;
-            EventManager.OnPlayerScaleUp?.Invoke();            
-            StartCoroutine(ScaleUpSmooth());
+            EventManager.OnPlayerScaleUp?.Invoke();         
+            StartCoroutine(ScaleUpSmooth()); 
         }
-
         else if (snowBallState == SnowBallState.Large)
         {
             EventManager.OnLevelFail?.Invoke();
             Time.timeScale = 1f;
         }
-        
     }
 
     private IEnumerator ScaleUpSmooth()
@@ -62,7 +60,7 @@ public class PlayerManager : MonoBehaviour
     {
         if(snowBallState != SnowBallState.Small)
         {
-            snowBallState++;
+            snowBallState--;
             EventManager.OnPlayerScaleDown?.Invoke();            
             StartCoroutine(ScaleDownSmooth());
         }

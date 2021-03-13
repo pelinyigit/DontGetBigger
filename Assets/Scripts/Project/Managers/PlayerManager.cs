@@ -34,8 +34,7 @@ public class PlayerManager : MonoBehaviour
         if (snowBallState != SnowBallState.Large)
         {
             snowBallState++;
-            EventManager.OnPlayerScaleUp?.Invoke();
-            //transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * scaleFactor, scaleGraceTime);
+            EventManager.OnPlayerScaleUp?.Invoke();            
             StartCoroutine(ScaleUpSmooth());
         }
 
@@ -64,8 +63,7 @@ public class PlayerManager : MonoBehaviour
         if(snowBallState != SnowBallState.Small)
         {
             snowBallState++;
-            EventManager.OnPlayerScaleDown?.Invoke();
-            //transform.localScale = Vector3.Slerp(transform.localScale, transform.localScale / scaleFactor, scaleGraceTime * Time.deltaTime);
+            EventManager.OnPlayerScaleDown?.Invoke();            
             StartCoroutine(ScaleDownSmooth());
         }
 

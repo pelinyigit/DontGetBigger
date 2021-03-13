@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3d4913c6ed00f494aaea39c6100b9e9b
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - levelFinishSFX: {fileID: 8300000, guid: a2509f86b280f4640a2866e52105c8a8, type: 3}
+  - levelFailSFX: {instanceID: 0}
+  - fireCollisionSFX: {instanceID: 0}
+  - snowmanCollisionSFX: {instanceID: 0}
+  - collectibleSFX: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

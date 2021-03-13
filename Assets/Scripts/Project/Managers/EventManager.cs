@@ -29,6 +29,7 @@ public static class EventManager
 
     #region CollectibleEvents
     public static CollectEvent OnCollectibleGathered = new CollectEvent();
+    
     #endregion
 }
 

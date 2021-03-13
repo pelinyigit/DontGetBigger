@@ -32,7 +32,9 @@ public class LevelManager : Singleton<LevelManager>
     }
 
     public void LoadLastLevel()
-    {       
+    {
+        int level = PlayerRecord.Instance.GetLastLevel();
+        Debug.Log(level);
         SceneManager.LoadScene(PlayerRecord.Instance.GetLastLevel());
     }
 

@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     float scaleGraceTime = 1f;
     
-    public enum SnowBallState {Small, Mid, Large};
+    public enum SnowBallState {XSmall, Small, Mid, Large, XLarge};
     public SnowBallState snowBallState;
 
     private void OnEnable()
@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void Start()
     {        
-        snowBallState = SnowBallState.Small;
+        snowBallState = SnowBallState.XSmall;
     }
     private void OnDisable()
     {
@@ -31,13 +31,13 @@ public class PlayerManager : MonoBehaviour
     }
     private void ScaleUp()
     {
-        if (snowBallState != SnowBallState.Large)
+        if (snowBallState != SnowBallState.XLarge)
         {
             snowBallState++;
             EventManager.OnPlayerScaleUp?.Invoke();         
             StartCoroutine(ScaleUpSmooth()); 
         }
-        else if (snowBallState == SnowBallState.Large)
+        else if (snowBallState == SnowBallState.XLarge)
         {
             EventManager.OnLevelFail?.Invoke();
             Time.timeScale = 1f;
@@ -58,14 +58,14 @@ public class PlayerManager : MonoBehaviour
 
     private void ScaleDown()
     {
-        if(snowBallState != SnowBallState.Small)
+        if(snowBallState != SnowBallState.XSmall)
         {
             snowBallState--;
             EventManager.OnPlayerScaleDown?.Invoke();            
             StartCoroutine(ScaleDownSmooth());
         }
 
-        else if(snowBallState == SnowBallState.Large)
+        else if(snowBallState == SnowBallState.XSmall)
         {
             EventManager.OnLevelFail?.Invoke();
             Time.timeScale = 1f;

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000010591299302}
   - component: {fileID: 33000012296263228}
   - component: {fileID: 23000013156694178}
-  - component: {fileID: 64000011109249894}
+  - component: {fileID: 8087307772361848612}
   m_Layer: 0
   m_Name: logs-snow
   m_TagString: Untagged
@@ -80,8 +80,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64000011109249894
-MeshCollider:
+--- !u!135 &8087307772361848612
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,7 +90,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 9bd0f4e45443a4326a88fe61724c20dc, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.64
+  m_Center: {x: 0.07, y: 0.69, z: -0.11}

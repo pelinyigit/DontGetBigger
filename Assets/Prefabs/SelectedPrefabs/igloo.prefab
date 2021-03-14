@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000010588819208}
   - component: {fileID: 33000010277831034}
   - component: {fileID: 23000011818173152}
-  - component: {fileID: 64000012639637696}
+  - component: {fileID: 4679839382715085649}
   m_Layer: 8
   m_Name: igloo
   m_TagString: Untagged
@@ -80,8 +80,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64000012639637696
-MeshCollider:
+--- !u!135 &4679839382715085649
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,7 +90,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 54c0eb167dae24708b5ba5795a2622af, type: 3}
+  serializedVersion: 2
+  m_Radius: 2.19093
+  m_Center: {x: 0, y: 1.1247444, z: 0.19093013}

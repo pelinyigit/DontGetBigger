@@ -63,7 +63,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Coin.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Base\Joystick.cs" />
@@ -71,12 +70,12 @@
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Compile Include="Assets\LevelProgressSlider.cs" />
-    <Compile Include="Assets\MusicPlayer.cs" />
-    <Compile Include="Assets\ScaleSlider.cs" />
+    <Compile Include="Assets\Scripts\Coin.cs" />
     <Compile Include="Assets\Scripts\Core\Singleton.cs" />
     <Compile Include="Assets\Scripts\Core\WaitExtension.cs" />
     <Compile Include="Assets\Scripts\GameUI.cs" />
+    <Compile Include="Assets\Scripts\LevelProgressSlider.cs" />
+    <Compile Include="Assets\Scripts\MusicPlayer.cs" />
     <Compile Include="Assets\Scripts\Pelin'sUI\MainMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerRecord.cs" />
     <Compile Include="Assets\Scripts\Project\CameraFollow.cs" />
@@ -104,8 +103,17 @@
     <Compile Include="Assets\Scripts\Project\UI\LevelFinishPanel.cs" />
     <Compile Include="Assets\Scripts\Project\UI\MainMenuPanel.cs" />
     <Compile Include="Assets\Scripts\Project\UI\Panel.cs" />
+    <Compile Include="Assets\Scripts\ScaleSlider.cs" />
+    <Compile Include="Assets\Scripts\SnowTrail.cs" />
     <Compile Include="Assets\ThirdPartyAssets\AurynSky\WinterArena\Scripts\ChestDemo.cs" />
     <Compile Include="Assets\ThirdPartyAssets\AurynSky\WinterArena\Scripts\Rotator.cs" />
+    <Compile Include="Assets\ThirdPartyAssets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\ThirdPartyAssets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\ThirdPartyAssets\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\ThirdPartyAssets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\ThirdPartyAssets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\ThirdPartyAssets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\ThirdPartyAssets\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\ThirdPartyAssets\Standard Assets\Cameras\Scripts\AbstractTargetFollower.cs" />
     <Compile Include="Assets\ThirdPartyAssets\Standard Assets\Cameras\Scripts\AutoCam.cs" />
     <Compile Include="Assets\ThirdPartyAssets\Standard Assets\Cameras\Scripts\FreeLookCam.cs" />
@@ -213,6 +221,7 @@
     <None Include="Assets\ThirdPartyAssets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
     <None Include="Assets\ThirdPartyAssets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\ThirdPartyAssets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
+    <None Include="Assets\ThirdPartyAssets\Plugins\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\ThirdPartyAssets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
     <None Include="Assets\ThirdPartyAssets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\ThirdPartyAssets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
@@ -404,8 +413,11 @@
     <Reference Include="UnityEditor">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>C:/Users/Onur_/Documents/Repos/Final/DontGetBigger/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
     <Reference Include="DOTween">
-      <HintPath>C:/Users/Onur_/Documents/Repos/Final/DontGetBigger/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+      <HintPath>C:/Users/Onur_/Documents/Repos/Final/DontGetBigger/Assets/ThirdPartyAssets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.21f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -786,12 +798,7 @@
       <HintPath>C:/Users/Onur_/Documents/Repos/Final/DontGetBigger/Library/ScriptAssemblies/com.unity.quicksearch.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{1BD94E9D-1A43-5E55-245C-D4AC8C8ED96F}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup></ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

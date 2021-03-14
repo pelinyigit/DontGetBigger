@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000013545229646}
   - component: {fileID: 33000013115670544}
   - component: {fileID: 23000014153612756}
-  - component: {fileID: 64000012024005170}
+  - component: {fileID: 4658642055397543695}
   m_Layer: 0
   m_Name: tree-fir-snow
   m_TagString: Untagged
@@ -80,8 +80,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &64000012024005170
-MeshCollider:
+--- !u!136 &4658642055397543695
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -90,7 +90,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: b5088fe4fe156452ca6a8cf1708b9217, type: 3}
+  m_Radius: 1.1643109
+  m_Height: 5.792148
+  m_Direction: 1
+  m_Center: {x: 0.10365844, y: 2.8955815, z: -0.020732403}

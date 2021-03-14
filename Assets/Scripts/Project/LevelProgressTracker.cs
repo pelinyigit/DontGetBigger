@@ -22,6 +22,7 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
         finishLine = GameObject.FindGameObjectWithTag("FinishLine");
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
     private void Start()
     {
        //finishLine = GameObject.FindGameObjectWithTag("FinishLine");
@@ -29,10 +30,12 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
        totalDistance = Mathf.Abs(finishLine.transform.position.z - player.transform.position.z);
        currentDistance = Mathf.Abs(finishLine.transform.position.z - player.transform.position.z);       
     }
+
     private void Update()
     {
         CalculateLevelProgress();
     }
+
     private void CalculateLevelProgress()
     {
         currentDistance = Mathf.Abs(finishLine.transform.position.z - player.transform.position.z);
@@ -40,6 +43,7 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
 
         CheckWinCondition();
     }
+
     private void CheckWinCondition()
     {
         if ((int)playerProgress == 100 && !isFinished)
@@ -49,6 +53,7 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
            // StartCoroutine(StopTime(delayTime));          
         }
     }
+
     private IEnumerator StopTime(float delay)
     {
         yield return new WaitForSecondsRealtime(delay);

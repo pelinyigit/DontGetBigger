@@ -25,6 +25,7 @@ public class LevelFinishPanel : Panel
 
         EventManager.OnCollectibleGathered.AddListener(ScoreTrack);
     }
+
     private void OnDisable()
     {
         EventManager.OnLevelStart.RemoveListener(HidePanel);

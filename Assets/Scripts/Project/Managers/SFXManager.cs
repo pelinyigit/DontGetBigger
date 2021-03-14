@@ -55,6 +55,7 @@ public class SFXManager : MonoBehaviour
         if (!audioSource) { return; }
         audioSource.PlayOneShot(levelFailSFX);
     }
+
     private void PlayFireCollisionSFX()
     {
         if (!audioSource) { return; }

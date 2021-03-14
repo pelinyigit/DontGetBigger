@@ -3,32 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
-{ 
+{
+    public enum SnowBallState { XSmall, Small, Mid, Large, XLarge };
+    public SnowBallState snowBallState;
+
     [Space]
     [SerializeField] 
     float scaleFactor;
 
     [Space]
     [SerializeField]
-    float scaleGraceTime = 1f;
-    
-    public enum SnowBallState {XSmall, Small, Mid, Large, XLarge};
-    public SnowBallState snowBallState;
+    float scaleGraceTime = 1f; 
 
     private void OnEnable()
     {
         EventManager.OnSnowmanCollision.AddListener(ScaleUp);
         EventManager.OnFireCollision.AddListener(ScaleDown);
-    }
-    private void Start()
-    {        
-        snowBallState = SnowBallState.XSmall;
-    }
+    }  
+
     private void OnDisable()
     {
         EventManager.OnSnowmanCollision.RemoveListener(ScaleUp);
         EventManager.OnFireCollision.RemoveListener(ScaleDown);
     }
+
+    private void Start()
+    {
+        snowBallState = SnowBallState.XSmall;
+    }
+
     private void ScaleUp()
     {
         if (snowBallState != SnowBallState.XLarge)
@@ -67,8 +70,7 @@ public class PlayerManager : MonoBehaviour
 
         else if(snowBallState == SnowBallState.XSmall)
         {
-            EventManager.OnLevelFail?.Invoke();
-            Time.timeScale = 1f;
+            return;
         }        
     }
 
@@ -83,6 +85,5 @@ public class PlayerManager : MonoBehaviour
             yield return null;
         }
     }
-
 
 }

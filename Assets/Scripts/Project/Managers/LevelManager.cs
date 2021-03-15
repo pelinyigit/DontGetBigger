@@ -15,10 +15,12 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Start()
     {
-        //currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        EventManager.OnLevelStart?.Invoke();
-        Time.timeScale = 1f;
-        Debug.Log(currentSceneIndex);
+        if (currentSceneIndex == 1)
+        {
+            EventManager.OnFirstLevelStart?.Invoke();
+        }    
+        
+        EventManager.OnLevelStart?.Invoke();        
     }
 
     public void LoadNextScene()
@@ -28,14 +30,13 @@ public class LevelManager : Singleton<LevelManager>
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene("Main Menu"); //check name of the scene
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void LoadLastLevel()
     {
-        int level = PlayerRecord.Instance.GetLastLevel();
-        Debug.Log(level);
-        SceneManager.LoadScene(PlayerRecord.Instance.GetLastLevel());
+        int maxLevelReached = PlayerLevelRecord.Instance.GetLastLevel();        
+        SceneManager.LoadScene(maxLevelReached);
     }
 
     public void ResetScene()

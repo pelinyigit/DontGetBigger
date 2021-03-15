@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire : ObstacleBase
+public class Fire : Obstacle
 {
     private void OnTriggerEnter(Collider other)
     {

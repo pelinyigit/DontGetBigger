@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snowman : ObstacleBase
+public class Snowman : Obstacle
 {
     private void OnTriggerEnter(Collider other)
     {

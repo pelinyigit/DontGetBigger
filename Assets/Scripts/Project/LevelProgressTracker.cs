@@ -5,9 +5,7 @@ using UnityEngine;
 public class LevelProgressTracker : Singleton<LevelProgressTracker>
 {
     private float playerProgress;
-    public float PlayerProgress { get { return playerProgress; } }
-
-    [SerializeField][Range(0f, 1.0f)] private float delayTime = 1f;
+    public float PlayerProgress { get { return playerProgress; } }    
 
     private GameObject finishLine;
     private GameObject player;
@@ -24,9 +22,7 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
     }
 
     private void Start()
-    {
-       //finishLine = GameObject.FindGameObjectWithTag("FinishLine");
-       //player = GameObject.FindGameObjectWithTag("Player");
+    {      
        totalDistance = Mathf.Abs(finishLine.transform.position.z - player.transform.position.z);
        currentDistance = Mathf.Abs(finishLine.transform.position.z - player.transform.position.z);       
     }
@@ -49,14 +45,7 @@ public class LevelProgressTracker : Singleton<LevelProgressTracker>
         if ((int)playerProgress == 100 && !isFinished)
         {
             isFinished = true;
-            EventManager.OnLevelFinish?.Invoke();
-           // StartCoroutine(StopTime(delayTime));          
+            EventManager.OnLevelFinish?.Invoke();                  
         }
-    }
-
-    private IEnumerator StopTime(float delay)
-    {
-        yield return new WaitForSecondsRealtime(delay);
-        Time.timeScale = 1f;
-    }
+    }    
 }

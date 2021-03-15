@@ -11,6 +11,7 @@ public static class EventManager
     #endregion
 
     #region Levels
+    public static UnityEvent OnFirstLevelStart = new UnityEvent();
     public static UnityEvent OnLevelStart = new UnityEvent();
     public static UnityEvent OnLevelFinish = new UnityEvent();
     public static UnityEvent OnLevelFail = new UnityEvent();

@@ -36,17 +36,14 @@ public class Panel : MonoBehaviour
     {
         CanvasGroup.alpha = 1;
         CanvasGroup.interactable = true;
-        CanvasGroup.blocksRaycasts = true;
-        Debug.Log("Aciga ciktim" + this.name);
+        CanvasGroup.blocksRaycasts = true;        
     }
 
     public virtual void HidePanel()
     {
         CanvasGroup.alpha = 0;
         CanvasGroup.interactable = false;
-        CanvasGroup.blocksRaycasts = false;
-        Debug.Log("Ben saklandim" + this.name);
+        CanvasGroup.blocksRaycasts = false;        
     }
     #endregion
-
 }

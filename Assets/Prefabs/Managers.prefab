@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 6549186341317831575}
   - component: {fileID: 6549186341317831574}
   - component: {fileID: 6549186341317831569}
-  - component: {fileID: 6549186341317831572}
+  - component: {fileID: 72991816}
+  - component: {fileID: 1832897953169472109}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -62,7 +63,19 @@ MonoBehaviour:
   fireCollisionSFX: {fileID: 8300000, guid: 28ba6fb159e1afc49b81408ed2271313, type: 3}
   snowmanCollisionSFX: {fileID: 8300000, guid: 886e3888a83313e43961a615079affff, type: 3}
   collectibleSFX: {fileID: 8300000, guid: f576c2c61220674468a3ebbf95fc2c4d, type: 3}
---- !u!114 &6549186341317831572
+--- !u!114 &72991816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6549186341317831573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3375bacff5ab74eb4e1a7cf8edfe9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1832897953169472109
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,4 +87,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d3f2fd71ab635e4fa81489e6f31109c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayTime: 0.3

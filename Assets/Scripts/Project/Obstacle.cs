@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ObstacleBase : MonoBehaviour
+public abstract class Obstacle : MonoBehaviour
 {
     public virtual void Dispose()
     {

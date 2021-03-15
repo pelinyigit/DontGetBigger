@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerSizeHandler : MonoBehaviour
 {
-    public enum SnowBallState { XSmall, Small, Mid, Large, XLarge };
-    public SnowBallState snowBallState;
+    private enum SnowBallState { XSmall, Small, Mid, Large, XLarge };
+    private SnowBallState snowBallState;
 
     [Space]
     [SerializeField] 
@@ -85,5 +85,4 @@ public class PlayerManager : MonoBehaviour
             yield return null;
         }
     }
-
 }

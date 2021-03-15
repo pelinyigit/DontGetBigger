@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayButton : Button
+public class MainMenuButton : Button
 {
     protected override void OnEnable()
     {
         base.OnEnable();
-        onClick.AddListener(PlayGame);
+        onClick.AddListener(LoadMainMenu);
     }
 
     protected override void OnDisable()
     {
         base.OnDisable();
-        onClick.RemoveListener(PlayGame);
+        onClick.RemoveListener(LoadMainMenu);
     }
 
-    private void PlayGame()
+    private void LoadMainMenu()
     {
-        LevelManager.Instance.LoadLastLevel();
-        //LevelManager.Instance.LoadNextScene();
+        LevelManager.Instance.LoadMainMenu();        
     }
 }

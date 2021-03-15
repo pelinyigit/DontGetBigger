@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class LevelFinishPanel : Panel
 {      
     public Text finalScoreText;
-    public int totalScore;
-    private bool canClick;
+    public int totalScore;    
 
     public GameObject winCanvas;
     public GameObject[] stars;    
@@ -43,18 +42,14 @@ public class LevelFinishPanel : Panel
         if (totalScore < 30)
         {
             stars[0].SetActive(true);//SHOW first star
-
-            yield return new WaitForSeconds(1.0f);//MARKER After one second, you can press the restart button to play again
-            canClick = true;
+            yield return new WaitForSeconds(1.0f);//MARKER After one second, you can press the restart button to play again            
         }
         else if (totalScore < 60)
         {
             stars[0].SetActive(true);
             yield return new WaitForSeconds(1.0f);
             stars[1].SetActive(true);//Show Second star
-
-            yield return new WaitForSeconds(1.0f);
-            canClick = true;
+            yield return new WaitForSeconds(1.0f);           
         }
         else
         {
@@ -63,9 +58,7 @@ public class LevelFinishPanel : Panel
             stars[1].SetActive(true);
             yield return new WaitForSeconds(1.0f);
             stars[2].SetActive(true);//SHOW FULL STARS
-
-            yield return new WaitForSeconds(1.0f);
-            canClick = true;
+            yield return new WaitForSeconds(1.0f);            
         }
     }
     private void ScoreTrack(int score)
